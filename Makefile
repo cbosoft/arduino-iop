@@ -2,7 +2,7 @@ FQBN 			= archlinux-arduino:avr:uno
 HARDWARE	=	/usr/share/arduino/hardware
 TOOLS			=	/usr/bin
 BUILD			= build
-TARGET		= blink
+TARGET		= adc_test
 
 # upload options
 CONFIG		= /etc/avrdude.conf
@@ -19,6 +19,8 @@ build: $(TARGET)/$(TARGET).ino
 upload: build
 	$(TOOLS)/avrdude -c$(PROG) -C$(CONFIG) -v -p$(PARTNO) -P$(PORT) -b$(BAUD) -D -Uflash:w:$(BUILD)/$(TARGET).ino.hex:i
 
+iop: iop.c
+	gcc iop.c -Wall -pedantic -o iop
 
 clean:
 	rm -rf build
