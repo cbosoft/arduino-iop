@@ -13,7 +13,7 @@ make
 sudo make install
 ```
 
-To build a basic serial listener build and install the library, then run
+To build a basic serial listener, build and install the library then run
 
 ```bash
 make serlist
