@@ -100,3 +100,10 @@ int ard_readserial_line(
 {
   return ard_readserial_until(fd, buf, '\n', buf_max, timeout);
 }
+
+
+int ard_writeserial(int fd, char *mesg, int mesglen)
+{
+  write(fd, mesg, mesglen);
+  return 0;
+}
