@@ -7,7 +7,7 @@
 #include <string.h>
 #include <errno.h>
 
-#include <ardiop.h>
+#include "ardiop.h"
  
 #define BUFMAX 256
 
